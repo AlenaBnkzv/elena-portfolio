@@ -12,4 +12,8 @@ export class ExperienceService {
     return this.db.object('experience').valueChanges();
   }
 
+  //addProject(data) {
+  // this.db.ref.child('experience').set(data);
+  //}
+
 }

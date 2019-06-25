@@ -1,6 +1,12 @@
 <h3 class="user__experience-title">Experience</h3>
-    <ul class="user__experience">
-      <li *ngFor="let project of projectList">
-        {{ project.name }} - {{ project.year}}
-      </li>
-    </ul>
+<ul class="user__experience">
+  <li *ngFor="let project of projectList">
+    {{ project.name }} - {{ project.year}}
+  </li>
+</ul>
+<h3 class="user__experience-title">Project links</h3>
+<ul class="user__experience">
+  <li *ngFor="let project of projectList">
+    <a [href]="project.url">{{ project.url}}</a>
+  </li>
+</ul>

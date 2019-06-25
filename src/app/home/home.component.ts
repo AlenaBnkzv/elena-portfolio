@@ -6,8 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  userName: string = 'Elena Bankuzova';
-  userGit: string = 'Github: AlenaBnkzv';
+  
 
   constructor() { }
 

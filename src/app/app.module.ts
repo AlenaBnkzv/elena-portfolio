@@ -2,30 +2,27 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
-import { AngularFireModule } from 'angularfire2';
-import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireModule } from '@angular/fire';
+import { firebase } from '../environments/environment';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-
-const config = {
-  apiKey: "AIzaSyCfM3vQmnsCeqfj--tyghF9nUbSna4-u0A",
-    authDomain: "portfolio-data-a53b6.firebaseapp.com",
-    databaseURL: "https://portfolio-data-a53b6.firebaseio.com",
-    projectId: "portfolio-data-a53b6",
-    storageBucket: "",
-    messagingSenderId: "521113394113",
-    appId: "1:521113394113:web:b5d39f15b1a02732"
-  };
+import { ProfileComponent } from './profile/profile.component';
+import { BioComponent } from './bio/bio.component';
+import { ExperienceComponent } from './experience/experience.component';
+import { ProjectsComponent } from './projects/projects.component';
+import { ProfileService } from './profile/profile.service';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
 
 @NgModule({
   imports: [
     BrowserModule,
     FormsModule,
-    AngularFireDatabaseModule,
-    AngularFireModule.initializeApp(config),
+    AngularFireModule.initializeApp(firebase,'my-app'),
+    AngularFireDatabaseModule
   ],
-  declarations: [ AppComponent, HomeComponent ],
-  bootstrap:    [ AppComponent ]
+  declarations: [ AppComponent, HomeComponent, ProfileComponent, BioComponent, ExperienceComponent, ProjectsComponent ],
+  bootstrap:    [ AppComponent ],
+  providers: [ProfileService]
 })
 export class AppModule { }

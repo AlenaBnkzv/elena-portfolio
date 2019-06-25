@@ -1,0 +1,18 @@
+.user-top {
+  display: flex;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #000;
+  border-radius: 2px;
+}
+.user__img {
+  img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  }
+}
+
+.user__info__name {
+  font-size: 20px;
+  padding-bottom: 10px;
+}

@@ -1,3 +1,3 @@
-# angular-dpebdy
+# angular-elena-portfolio
 
-[Edit on StackBlitz ⚡️](https://stackblitz.com/edit/angular-dpebdy)
+[Edit on StackBlitz ⚡️](https://stackblitz.com/edit/angular-elena-potfolio)

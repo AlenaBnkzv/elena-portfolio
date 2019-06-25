@@ -1,6 +1,6 @@
 <h3 class="user__experience-title">Experience</h3>
     <ul class="user__experience">
-      <li *ngFor="let project in projectList">
+      <li *ngFor="let project of projectList">
         {{ project.name }} - {{ project.year}}
       </li>
     </ul>

@@ -9,7 +9,7 @@ export class ExperienceService {
   constructor(private db: AngularFireDatabase) { }
 
   getProjects() {
-    return this.db.object('Experience').valueChanges();
+    return this.db.object('experience').valueChanges();
   }
 
 }

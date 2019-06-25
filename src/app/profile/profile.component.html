@@ -1,10 +1,10 @@
 <section class="user-top">
   <span class="user__img">
-    <img [src]="userPhoto">
+    <img [src]="user.photoUrl">
   </span>
   <ul class="user__info">
-   <li class="user__info__name">{{ userName }}</li>
-   <li class="user__info__git">{{ userGit }}</li>
-   <li class="user__info__link">{{ userGitUrl }}</li>
+   <li class="user__info__name">{{ user.name }}</li>
+   <li class="user__info__git">{{ user.git }}</li>
+   <li class="user__info__link">{{ user.gitUrl }}</li>
   </ul>
 </section>

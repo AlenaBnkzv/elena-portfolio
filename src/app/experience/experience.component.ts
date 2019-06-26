@@ -17,11 +17,11 @@ export class ExperienceComponent implements OnInit, OnDestroy {
     this.experienceSub = this.experience.getProjects().subscribe((data)=> {
       this.projectList = Object.values(data);
     });
-    this.experience.addProject({
-      name: "Consumer Fusion",
-      url: "https://www.consumerfusion.com/",
-      year: 2018
-    });
+    //this.experience.addProject({
+    //name: "Consumer Fusion",
+    //  url: "https://www.consumerfusion.com/",
+     // year: 2018
+    //});
   }
   ngOnDestroy() {
     if (this.experienceSub) {

@@ -2,7 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ProfileService }  from './profile.service';
 import { Subscription }  from 'rxjs';
 
-interface User {
+export interface User {
   name: string;
   git: string;
   gitUrl: string;

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AngularFireModule } from '@angular/fire';
 import { firebase } from '../environments/environment';
@@ -17,7 +17,7 @@ import { ExperienceService } from './experience/experience.service';
 @NgModule({
   imports: [
     BrowserModule,
-    FormsModule,
+    ReactiveFormsModule,
     AngularFireModule.initializeApp(firebase,'my-app'),
     AngularFireDatabaseModule
   ],

@@ -1,12 +1,22 @@
-<h3 class="user__experience-title">Experience</h3>
+<h3 class="user__experience__title">Experience</h3>
 <ul class="user__experience">
   <li *ngFor="let project of projectList">
     {{ project.name }} - {{ project.year}}
   </li>
 </ul>
-<h3 class="user__experience-title">Project links</h3>
+<h3 class="user__experience__title">Project links</h3>
 <ul class="user__experience">
   <li *ngFor="let project of projectList">
     <a [href]="project.url">{{ project.url}}</a>
   </li>
 </ul>
+<h4 class="user__experience__title">Add experience</h4>
+<form  [formGroup]="projectForm" class="user__experience__form" (ngSubmit)="addProject()">
+  <label>Project Name</label>
+  <input class="form-control" type="text" formControlName="name" />
+  <label>Project Link</label>
+  <input class="form-control" type="text" formControlName="link" />
+  <label>Project Year</label>
+  <input class="form-control" type="text" formControlName="year" />
+  <button class="form-control__btn">Add</button>
+</form>

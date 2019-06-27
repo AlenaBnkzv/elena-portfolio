@@ -1,5 +1,12 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/database';
+import { ReactiveFormsModule } from '@angular/forms';
+
+export interface project {
+  name: string;
+  url: string;
+  year: number;
+}
 
 @Injectable({
   providedIn: 'root'
@@ -9,11 +16,11 @@ export class ExperienceService {
   constructor(private db: AngularFireDatabase) { }
 
   getProjects() {
-    return this.db.object('experience').valueChanges();
+    return this.db.list('experience').valueChanges();
   }
 
-  //addProject(data) {
-  // this.db.ref.child('experience').set(data);
-  //}
+  addProject(project) {
+    this.db.list('experience').push(project);
+  }
 
 }

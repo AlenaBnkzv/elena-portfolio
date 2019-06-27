@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ExperienceService }  from './experience.service';
-import { FormGroup } from '@angular/forms';
+import { FormGroup, FormControl } from '@angular/forms';
 import { Subscription }  from 'rxjs';
 
 @Component({
@@ -16,16 +16,16 @@ export class ExperienceComponent implements OnInit, OnDestroy {
   constructor(private experience: ExperienceService) { }
 
   ngOnInit() {
-    this.experienceSub = this.experience.getProjects().subscribe((data)=> {
-      this.projectList = Object.values(data);
-    });
+   this.projectForm = new FormGroup({
+    name: new FormControl(null),
+    url: new FormControl(null),
+    year: new FormControl(null)
+  });
 
-    this.projectForm = this.experience.addProject({
-      name: '',
-      url: '',
-      year: ''
-    });
-  }
+  this.experienceSub = this.experience.getProjects().subscribe((data)=> {
+   this.projectList = Object.values(data);
+  });
+}
 
   ngOnDestroy() {
     if (this.experienceSub) {
@@ -33,4 +33,8 @@ export class ExperienceComponent implements OnInit, OnDestroy {
     }
   }
 
+  onSubmit() {
+   this.experience.addProject(this.projectForm.value);
+   this.projectForm.reset();
+  }
 }

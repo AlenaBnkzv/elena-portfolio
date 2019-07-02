@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl } from '@angular/forms';
 import { LoginPageService } from './login-page.service';
 
 @Component({
@@ -7,10 +8,19 @@ import { LoginPageService } from './login-page.service';
   styleUrls: ['./login-page.component.css']
 })
 export class LoginPageComponent implements OnInit {
+  loginForm: FormGroup;
 
   constructor( private loginAuth: LoginPageService ) { }
 
   ngOnInit() {
+    this.loginForm = new FormGroup({
+      email: new FormControl(null),
+      password: new FormControl(null)
+    })
   }
 
+  onSubmit() {
+    const {email, password} = this.loginForm.value;
+    this.loginAuth.login(email, password);
+  }
 }

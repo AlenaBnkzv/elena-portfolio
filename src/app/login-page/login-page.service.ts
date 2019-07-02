@@ -12,7 +12,7 @@ export class LoginPageService {
 
     login(email,password) {
     
-    return this.fireAuth.auth.signInWithEmailAndPassword(email, password)
+    this.fireAuth.auth.signInWithEmailAndPassword(email, password)
       .catch(function (error) {
         alert('Please try again');
       });

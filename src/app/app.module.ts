@@ -17,6 +17,7 @@ import { ExperienceService } from './experience/experience.service';
 import { EducationComponent } from './education/education.component';
 import { EducationService } from './education/education.service';
 import { LoginPageComponent } from './login-page/login-page.component';
+import { LoginPageService } from './login-page/login-page.service';
 
 
 @NgModule({
@@ -29,6 +30,6 @@ import { LoginPageComponent } from './login-page/login-page.component';
   ],
   declarations: [ AppComponent, HomeComponent, ProfileComponent, BioComponent, ExperienceComponent, EducationComponent, LoginPageComponent ],
   bootstrap:    [ AppComponent ],
-  providers: [ ProfileService, ExperienceService, EducationService ]
+  providers: [ ProfileService, ExperienceService, EducationService, LoginPageService ]
 })
 export class AppModule { }

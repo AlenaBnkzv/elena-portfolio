@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
+import { Routes, RouterModule } from '@angular/router';
 
 import { AngularFireModule } from '@angular/fire';
 import { firebase } from '../environments/environment';
@@ -13,16 +14,24 @@ import { ExperienceComponent } from './experience/experience.component';
 import { ProfileService } from './profile/profile.service';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { ExperienceService } from './experience/experience.service';
+import { EducationComponent } from './education/education.component';
+import { EducationService } from './education/education.service';
+
+const appRoutes: Routes = [
+  { path: 'education', component: EducationComponent },
+  { path: 'experience', component: ExperienceComponent }
+]
 
 @NgModule({
   imports: [
     BrowserModule,
     ReactiveFormsModule,
+    RouterModule.forRoot(appRoutes),
     AngularFireModule.initializeApp(firebase,'my-app'),
     AngularFireDatabaseModule
   ],
-  declarations: [ AppComponent, HomeComponent, ProfileComponent, BioComponent, ExperienceComponent ],
+  declarations: [ AppComponent, HomeComponent, ProfileComponent, BioComponent, ExperienceComponent, EducationComponent ],
   bootstrap:    [ AppComponent ],
-  providers: [ProfileService, ExperienceService]
+  providers: [ ProfileService, ExperienceService, EducationService ]
 })
 export class AppModule { }

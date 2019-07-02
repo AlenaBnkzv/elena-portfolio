@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { AngularFireAuthModule, AngularFireAuth } from '@angular/fire/auth';
+import { AngularFireAuth } from '@angular/fire/auth';
 import * as firebase from '@firebase/app';
 
 @Injectable({
@@ -9,13 +9,10 @@ export class LoginPageService {
 
   constructor(private fireAuth: AngularFireAuth) {
   }
-
-    login(email,password) {
-    
-    this.fireAuth.auth.signInWithEmailAndPassword(email, password)
-      .catch(function (error) {
-        alert('Please try again');
-      });
-    
-  }
+  
+  async login(email,password) {
+  
+  const {user} = await this.fireAuth.auth.signInWithEmailAndPassword(email, password);
+  console.log(user);
+ }
 }

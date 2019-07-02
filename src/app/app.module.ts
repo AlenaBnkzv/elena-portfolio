@@ -13,6 +13,7 @@ import { BioComponent } from './bio/bio.component';
 import { ExperienceComponent } from './experience/experience.component';
 import { ProfileService } from './profile/profile.service';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { AngularFireAuthModule } from '@angular/fire/auth';
 import { ExperienceService } from './experience/experience.service';
 import { EducationComponent } from './education/education.component';
 import { EducationService } from './education/education.service';
@@ -26,6 +27,7 @@ import { LoginPageService } from './login-page/login-page.service';
     ReactiveFormsModule,
     AngularFireModule.initializeApp(firebase,'my-app'),
     AngularFireDatabaseModule,
+    AngularFireAuthModule,
     AppRoutingModule
   ],
   declarations: [ AppComponent, HomeComponent, ProfileComponent, BioComponent, ExperienceComponent, EducationComponent, LoginPageComponent ],

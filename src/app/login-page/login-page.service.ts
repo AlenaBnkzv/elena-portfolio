@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
+import { of } from 'rxjs';
 import * as firebase from '@firebase/app';
 
 @Injectable({
@@ -9,10 +10,8 @@ export class LoginPageService {
 
   constructor(private fireAuth: AngularFireAuth) {
   }
-  
-  async login(email,password) {
-  
-  const {user} = await this.fireAuth.auth.signInWithEmailAndPassword(email, password);
-  console.log(user);
- }
+
+  login(email,password) {
+    return this.fireAuth.auth.signInWithEmailAndPassword(email, password);
+  }
 }

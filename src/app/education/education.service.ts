@@ -9,6 +9,6 @@ export class EducationService {
   constructor(private db: AngularFireDatabase) { }
   
   getEducation() {
-    return this.db.object('еducation').valueChanges();
+    return this.db.object('education').valueChanges();
   }
 }

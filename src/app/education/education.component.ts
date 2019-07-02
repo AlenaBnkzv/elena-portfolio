@@ -1,5 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { EducationService }  from './education.service';
+import { NgForm } from '@angular/forms';
 import { Subscription }  from 'rxjs';
 
 export interface EducationList {
@@ -10,24 +11,23 @@ export interface EducationList {
 @Component({
   selector: 'app-education',
   templateUrl: './education.component.html',
-  styleUrls: ['./education.component.css']
+  styleUrls: ['./education.component.scss']
 })
 export class EducationComponent implements OnInit, OnDestroy {
   educationList: EducationList;
   educationSub: Subscription;
 
-  constructor(private education: EducationService) { }
+  constructor(private profile: EducationService) { }
 
   ngOnInit() {
-    this.educationSub = this.education.getEducation().subscribe((data)=> {
+    this.educationSub = this.profile.getEducation().subscribe((data)=> {
       this.educationList = data;
-      console.log(data);
     });
   }
-
   ngOnDestroy() {
     if (this.educationSub) {
       this.educationSub.unsubscribe();
     }
   }
+
 }

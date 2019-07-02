@@ -12,14 +12,21 @@ export class AuthService {
   constructor(private fireAuth: AngularFireAuth) {
   }
 
-  login(email,password) {
-    return this.fireAuth.auth.signInWithEmailAndPassword(email, password)
-      .then(({user}) => {
-        const token = user.stsTokenManager.accessToken;
-        localStorage.setItem('auth-token', token );
-        this.setToken(token);
-        return user;
-      });
+  // login(email,password) {
+  //   return this.fireAuth.auth.signInWithEmailAndPassword(email, password)
+  //     .then((data) => {
+  //       console.log(Object.assign({}, data));
+  //       const token = data.user.stsTokenManager.accessToken;
+  //       localStorage.setItem('auth-token', token );
+  //       this.setToken(token);
+  //       return data.user;
+  //     });
+  // }
+
+  async login(email,password) {
+    const {user} = await this.fireAuth.auth.signInWithEmailAndPassword(email, password);
+    console.log(user.getIdTokenResult());
+      
   }
 
   setToken(token: string): void {

@@ -27,7 +27,7 @@ export class LoginPageComponent implements OnInit {
     const {email, password} = this.loginForm.value;
     this.loginAuth.login(email, password)
       .then(user => {
-         //this.router.navigate(['/home']);
+         this.router.navigate(['/home']);
          console.log(user);
       });
   }

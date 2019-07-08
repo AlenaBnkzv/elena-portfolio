@@ -3,6 +3,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
+import { first } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -10,12 +11,12 @@ import { BehaviorSubject } from 'rxjs';
 export class AuthService {
   private eventAuthError = new BehaviorSubject<string>("");
   eventAuthError$ = this.eventAuthError.asObservable();
-  public isLoggedIn: boolean;
 
   constructor(
     private afAuth: AngularFireAuth,
     private db: AngularFirestore,
     private router: Router) {
+      console.log(this.afAuth.auth.currentUser);
   }
 
   getUserState() {
@@ -26,14 +27,17 @@ export class AuthService {
     this.afAuth.auth.signInWithEmailAndPassword(email, password)
       .catch(error => {
         this.eventAuthError.next(error);
-        this.isLoggedIn = false;
+
       })
       .then(userCredential => {
         if(userCredential) {
           this.router.navigate(['/home']);
-          this.isLoggedIn = true;
         }
       })
+  }
+  
+  isLoggedIn() {
+    return this.getUserState().pipe(first()).toPromise();
   }
 
   logout() {

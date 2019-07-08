@@ -11,7 +11,7 @@
       <a [href]="project.url">{{ project.url }}</a>
     </li>
   </ul>
-  <div *ngIf="user" class="form-wrapper">
+  <div *ngIf="isLoggedIn" class="form-wrapper">
     <h5 class="user__experience__title">Add project</h5>
     <form [formGroup]="projectForm" class="user__experience__form" (ngSubmit)="onSubmit()">
       <div class="form-group">

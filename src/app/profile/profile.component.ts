@@ -21,7 +21,7 @@ export class ProfileComponent implements OnInit, OnDestroy {
   constructor(private profile: ProfileService) { }
 
   ngOnInit() {
-    this.userSub = this.profile.getUser().subscribe((data)=> {
+    this.userSub = this.profile.getUser().subscribe((data: User)=> {
       this.user = data;
     });
   }

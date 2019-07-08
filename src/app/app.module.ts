@@ -20,7 +20,7 @@ import { EducationComponent } from './education/education.component';
 import { EducationService } from './education/education.service';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { AuthService } from './shared/services/auth.service';
-import { AuthGuard } from './shared/services/auth.guard';
+import { AuthGuard } from './shared/guard/auth.guard';
 
 
 @NgModule({

@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ExperienceService }  from './experience.service';
 import { FormGroup, FormControl } from '@angular/forms';
+import { AuthService } from '../shared/services/auth.service';
 import { Subscription }  from 'rxjs';
 
 @Component({

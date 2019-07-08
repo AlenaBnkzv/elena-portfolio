@@ -11,20 +11,22 @@
       <a [href]="project.url">{{ project.url }}</a>
     </li>
   </ul>
-  <h5 class="user__experience__title">Add project</h5>
-  <form [formGroup]="projectForm" class="user__experience__form" (ngSubmit)="onSubmit()">
-    <div class="form-group">
-      <label>Project Name</label>
-      <input class="form-control form-control-sm" type="text" formControlName="name" />
-    </div>
-    <div class="form-group">
-      <label>Project Link</label>
-      <input class="form-control form-control-sm" type="text" formControlName="url" />
-    </div>
-    <div class="form-group">
-      <label>Project Year</label>
-    <input class="form-control form-control-sm" type="text" formControlName="year" />
-    </div>
-    <button class="btn btn-primary">Add</button>
-  </form>
+  <div *ngIf="user" class="form-wrapper">
+    <h5 class="user__experience__title">Add project</h5>
+    <form [formGroup]="projectForm" class="user__experience__form" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label>Project Name</label>
+        <input class="form-control form-control-sm" type="text" formControlName="name" />
+      </div>
+      <div class="form-group">
+        <label>Project Link</label>
+        <input class="form-control form-control-sm" type="text" formControlName="url" />
+      </div>
+      <div class="form-group">
+        <label>Project Year</label>
+      <input class="form-control form-control-sm" type="text" formControlName="year" />
+      </div>
+      <button class="btn btn-primary">Add</button>
+    </form>
+  </div>
 </div>

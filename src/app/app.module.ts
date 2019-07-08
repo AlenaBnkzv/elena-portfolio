@@ -5,7 +5,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFireAuthModule } from '@angular/fire/auth';
-import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { firebase } from '../environments/environment';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -30,7 +29,6 @@ import { AuthGuard } from './shared/guard/auth.guard';
     AngularFireModule.initializeApp(firebase,'my-app'),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
-    AngularFirestoreModule,
     AppRoutingModule
   ],
   declarations: [ AppComponent, HomeComponent, ProfileComponent, BioComponent, ExperienceComponent, EducationComponent, LoginPageComponent ],

@@ -11,22 +11,55 @@
       <a [href]="project.url">{{ project.url }}</a>
     </li>
   </ul>
-  <div  class="form-wrapper">
+  <div *ngIf="user" class="form-wrapper">
     <h5 class="user__experience__title">Add project</h5>
-    <form [formGroup]="projectForm" class="user__experience__form" (ngSubmit)="onSubmit()">
+    <form
+      [formGroup]="projectForm"
+      class="user__experience__form"
+      (ngSubmit)="onSubmit()"
+    >
       <div class="form-group">
         <label>Project Name</label>
-        <input class="form-control form-control-sm" type="text" formControlName="name" />
+        <input
+          class="form-control form-control-sm"
+          type="text"
+          formControlName="name"
+          [ngClass]="{'is-invalid': projectForm.get('name').invalid && projectForm.get('name').touched}"
+        />
+        <div class="invalid-feedback">
+          Please provide name.
+        </div>
       </div>
       <div class="form-group">
         <label>Project Link</label>
-        <input class="form-control form-control-sm" type="text" formControlName="url" />
+        <input
+          class="form-control form-control-sm"
+          type="text"
+          formControlName="url"
+          [ngClass]="{'is-invalid': projectForm.get('url').invalid && projectForm.get('url').touched}"
+        />
+        <div class="invalid-feedback">
+          Please provide url.
+        </div>
       </div>
       <div class="form-group">
         <label>Project Year</label>
-      <input class="form-control form-control-sm" type="text" formControlName="year" />
+      <input
+        class="form-control form-control-sm"
+        type="text"
+        formControlName="year"
+        [ngClass]="{'is-invalid': projectForm.get('year').invalid && projectForm.get('year').touched}"
+      />
+      <div class="invalid-feedback">
+          Please provide a valid year.
       </div>
-      <button class="btn btn-primary">Add</button>
+      </div>
+      <button
+        class="btn btn-primary"
+        [disabled]="projectForm.invalid"
+      >
+      Add
+      </button>
     </form>
   </div>
 </div>

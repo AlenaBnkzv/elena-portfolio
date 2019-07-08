@@ -9,26 +9,22 @@ import { Router } from '@angular/router';
   styleUrls: ['./login-page.component.css']
 })
 export class LoginPageComponent implements OnInit {
+  authError: any;
   loginForm: FormGroup;
 
-  constructor( 
-    private loginAuth: AuthService,
-    private router: Router
-    ) { }
+  constructor(private auth: AuthService) { }
 
   ngOnInit() {
-    this.loginForm = new FormGroup({
-      email: new FormControl('test@mail.ru',[Validators.required, Validators.email]),
-      password: new FormControl('121121',Validators.required)
-    })
-  }
+      this.auth.eventAuthError$.subscribe( data => {
+      this.authError = data;
+    });
 
-  onSubmit() {
-    const {email, password} = this.loginForm.value;
-    this.loginAuth.login(email, password)
-      .then(user => {
-         this.router.navigate(['/home']);
-         console.log(user);
-      });
+      this.loginForm = new FormGroup({
+        email: new FormControl('test@mail.ru',[Validators.required, Validators.email]),
+        password: new FormControl('121121',Validators.required)
+      })
+  }
+    login(loginFrm) {
+      this.auth.login(loginFrm.value.email, loginFrm.value.password);
   }
 }

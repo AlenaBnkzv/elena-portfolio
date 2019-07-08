@@ -10,6 +10,7 @@ import { BehaviorSubject } from 'rxjs';
 export class AuthService {
   private eventAuthError = new BehaviorSubject<string>("");
   eventAuthError$ = this.eventAuthError.asObservable();
+  public isLoggedIn: boolean;
 
   constructor(
     private afAuth: AngularFireAuth,
@@ -25,10 +26,12 @@ export class AuthService {
     this.afAuth.auth.signInWithEmailAndPassword(email, password)
       .catch(error => {
         this.eventAuthError.next(error);
+        this.isLoggedIn = false;
       })
       .then(userCredential => {
         if(userCredential) {
           this.router.navigate(['/home']);
+          this.isLoggedIn = true;
         }
       })
   }

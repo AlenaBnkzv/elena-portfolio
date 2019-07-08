@@ -15,9 +15,7 @@ export class AuthService {
   constructor(
     private afAuth: AngularFireAuth,
     private db: AngularFirestore,
-    private router: Router) {
-      console.log(this.afAuth.auth.currentUser);
-  }
+    private router: Router) {}
 
   getUserState() {
     return this.afAuth.authState;

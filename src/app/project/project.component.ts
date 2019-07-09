@@ -14,6 +14,11 @@ export class ProjectComponent implements OnInit, OnDestroy {
   experienceSub: Subscription;
   projectForm: FormGroup;
 
+  emailFormControl = new FormControl('', [
+    Validators.required,
+    Validators.email,
+  ]);
+
   constructor(
     private experience: ProjectService ) { }
 

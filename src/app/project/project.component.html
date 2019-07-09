@@ -18,44 +18,48 @@
       class="user__project__form"
       (ngSubmit)="onSubmit()"
     >
-      <div class="form-group">
+      <mat-form-field class="full-width">
         <label>Project Name</label>
         <input
-          class="form-control form-control-sm"
+          matInput
+          class="form-control"
           type="text"
           formControlName="name"
           [ngClass]="{'is-invalid': projectForm.get('name').invalid && projectForm.get('name').touched}"
         />
-        <div class="invalid-feedback">
-          Please provide name.
-        </div>
-      </div>
-      <div class="form-group">
+        <mat-error>
+          Please provide name
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field>
         <label>Project Link</label>
         <input
-          class="form-control form-control-sm"
+          matInput
+          class="form-control"
           type="text"
           formControlName="url"
           [ngClass]="{'is-invalid': projectForm.get('url').invalid && projectForm.get('url').touched}"
         />
-        <div class="invalid-feedback">
+        <mat-error>
           Please provide url.
-        </div>
-      </div>
-      <div class="form-group">
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field>
         <label>Project Year</label>
       <input
-        class="form-control form-control-sm"
+        matInput
+        class="form-control"
         type="text"
         formControlName="year"
         [ngClass]="{'is-invalid': projectForm.get('year').invalid && projectForm.get('year').touched}"
       />
-      <div class="invalid-feedback">
-          Please provide a valid year.
-      </div>
-      </div>
+        <mat-error>
+          Please provide year.
+        </mat-error>
+      </mat-form-field>
       <button
-        class="btn btn-primary"
+        mat-flat-button
+        color="primary"
         [disabled]="projectForm.invalid"
       >
       Add

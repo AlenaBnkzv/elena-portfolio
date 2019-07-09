@@ -20,6 +20,8 @@ import { BioService } from './bio/bio.service';
 import { AuthService } from './shared/services/auth.service';
 import { AuthGuard } from './shared/guard/auth.guard';
 
+import { MatButtonModule, MatInputModule } from '@angular/material';
+
 
 @NgModule({
   imports: [
@@ -28,7 +30,9 @@ import { AuthGuard } from './shared/guard/auth.guard';
     AngularFireModule.initializeApp(firebase,'my-app'),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatButtonModule,
+    MatInputModule
   ],
   declarations: [ AppComponent, HomeComponent, ProfileComponent, BioComponent, ProjectComponent, LoginPageComponent ],
   bootstrap:    [ AppComponent ],

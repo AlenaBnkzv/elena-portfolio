@@ -31,7 +31,7 @@
           Please provide name
         </mat-error>
       </mat-form-field>
-      <mat-form-field>
+      <mat-form-field class="full-width">
         <label>Project Link</label>
         <input
           matInput
@@ -41,10 +41,10 @@
           [ngClass]="{'is-invalid': projectForm.get('url').invalid && projectForm.get('url').touched}"
         />
         <mat-error>
-          Please provide url.
+          Please provide url
         </mat-error>
       </mat-form-field>
-      <mat-form-field>
+      <mat-form-field class="full-width" >
         <label>Project Year</label>
       <input
         matInput

@@ -2,3 +2,16 @@
 ul {
   list-style: none;
 }
+
+label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+button {
+  margin-top: 15px;
+}
+
+.full-width {
+  width: 100%;
+}

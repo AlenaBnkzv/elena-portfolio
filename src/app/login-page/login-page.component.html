@@ -1,16 +1,16 @@
-<div class="container d-flex flex-column justify-content-center vh-100">
+<div class="container">
   <form  [formGroup]="loginForm" (ngSubmit)="login(loginForm)">
     <div class="row" *ngIf="authError">
-        <div class="col-12 alert alert-danger">{{ authError?.message }}</div>
+        <mat-error>{{ authError?.message }}</mat-error>
     </div>
-    <div class="form-group">
-      <label>E-mail</label>
-      <input class="form-control" type="email" formControlName="email" />
-    </div>
-    <div class="form-group">
+    <mat-form-field class="full-width">
+        <label>E-mail</label>
+        <input matInput class="form-control" type="email" formControlName="email" />
+    </mat-form-field>
+    <mat-form-field class="full-width">
       <label>Password</label>
-      <input class="form-control" type="password" formControlName="password" />
-    </div>
-    <button class="btn btn-primary w-100">Sign in</button>
+      <input matInput class="form-control" type="password" formControlName="password" />
+    </mat-form-field>
+    <button mat-flat-button color="primary">Log in</button>
   </form>
 </div>

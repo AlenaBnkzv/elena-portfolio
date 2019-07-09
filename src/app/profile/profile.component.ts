@@ -25,6 +25,7 @@ export class ProfileComponent implements OnInit, OnDestroy {
       this.user = data;
     });
   }
+  
   ngOnDestroy() {
     if (this.userSub) {
       this.userSub.unsubscribe();

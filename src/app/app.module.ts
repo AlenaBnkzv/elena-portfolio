@@ -12,12 +12,11 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { ProfileComponent } from './profile/profile.component';
 import { BioComponent } from './bio/bio.component';
-import { ExperienceComponent } from './experience/experience.component'; 
-import { ProfileService } from './profile/profile.service';
-import { ExperienceService } from './experience/experience.service';
-import { EducationComponent } from './education/education.component';
-import { EducationService } from './education/education.service';
+import { ProjectComponent } from './project/project.component'; 
 import { LoginPageComponent } from './login-page/login-page.component';
+import { ProfileService } from './profile/profile.service';
+import { ProjectService } from './project/project.service';
+import { BioService } from './bio/bio.service';
 import { AuthService } from './shared/services/auth.service';
 import { AuthGuard } from './shared/guard/auth.guard';
 
@@ -31,8 +30,8 @@ import { AuthGuard } from './shared/guard/auth.guard';
     AngularFireAuthModule,
     AppRoutingModule
   ],
-  declarations: [ AppComponent, HomeComponent, ProfileComponent, BioComponent, ExperienceComponent, EducationComponent, LoginPageComponent ],
+  declarations: [ AppComponent, HomeComponent, ProfileComponent, BioComponent, ProjectComponent, LoginPageComponent ],
   bootstrap:    [ AppComponent ],
-  providers: [ ProfileService, ExperienceService, EducationService, AuthService, AuthGuard ]
+  providers: [ ProfileService, ProjectService, BioService, AuthService, AuthGuard ]
 })
 export class AppModule { }

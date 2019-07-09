@@ -11,7 +11,7 @@ export interface project {
 @Injectable({
   providedIn: 'root'
 })
-export class ExperienceService {
+export class ProjectService {
 
   constructor(private db: AngularFireDatabase) { }
 

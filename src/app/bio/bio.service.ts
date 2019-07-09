@@ -4,7 +4,7 @@ import { AngularFireDatabase } from '@angular/fire/database';
 @Injectable({
   providedIn: 'root'
 })
-export class EducationService {
+export class BioService {
 
   constructor(private db: AngularFireDatabase) { }
   

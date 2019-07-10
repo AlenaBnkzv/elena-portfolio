@@ -4,7 +4,10 @@
   </span> -->
   <ul class="user__info">
    <li class="user__info__name">{{ user.name }}</li>
-   <li class="user__info__git">{{ user.git }}</li>
-   <li class="user__info__link">{{ user.gitUrl }}</li>
+   <li class="user__info__git">
+      <a [href]="user.gitUrl">
+        <span>Github</span>
+      </a>
+    </li>
   </ul>
 </section>

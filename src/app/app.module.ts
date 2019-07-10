@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { AngularFireModule } from '@angular/fire';
@@ -20,19 +21,28 @@ import { BioService } from './bio/bio.service';
 import { AuthService } from './shared/services/auth.service';
 import { AuthGuard } from './shared/guard/auth.guard';
 
-import { MatButtonModule, MatInputModule } from '@angular/material';
+import { 
+  MatButtonModule,
+  MatInputModule,
+  MatExpansionModule,
+  MatGridListModule
+  }
+  from '@angular/material';
 
 
 @NgModule({
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     ReactiveFormsModule,
     AngularFireModule.initializeApp(firebase,'my-app'),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     AppRoutingModule,
     MatButtonModule,
-    MatInputModule
+    MatInputModule,
+    MatExpansionModule,
+    MatGridListModule
   ],
   declarations: [ AppComponent, HomeComponent, ProfileComponent, BioComponent, ProjectComponent, LoginPageComponent ],
   bootstrap:    [ AppComponent ],

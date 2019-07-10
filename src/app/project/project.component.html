@@ -1,16 +1,37 @@
-<div class="container">
-  <h4 class="user__project__title">Projects</h4>
-  <ul class="user__project">
-    <li *ngFor="let project of projectList">
-      {{ project.name }} - {{ project.year }}
-    </li>
-  </ul>
-  <h4 class="user__project__title">Project links</h4>
-  <ul class="user__project">
-    <li *ngFor="let project of projectList">
-      <a [href]="project.url">{{ project.url }}</a>
-    </li>
-  </ul>
+<div class="project__wrapper">
+  <mat-accordion>
+    <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <h4 class="user__project__title">Projects</h4>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <mat-panel-description>
+        <ul class="user__project">
+          <li *ngFor="let project of projectList">
+            {{ project.name }} - {{ project.year }}
+          </li>
+        </ul>
+      </mat-panel-description>
+  </mat-expansion-panel>
+</mat-accordion>
+<mat-accordion>
+  <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)" hideToggle>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <h4 class="user__project__title">Project links</h4>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+
+    <mat-panel-description>
+      <ul class="user__project">
+      <li *ngFor="let project of projectList">
+        <a [href]="project.url">{{ project.url }}</a>
+      </li>
+    </ul>
+    </mat-panel-description>
+  </mat-expansion-panel>
+</mat-accordion>
   <div *ngIf="user" class="form-wrapper">
     <h5 class="user__project__title">Add project</h5>
     <form

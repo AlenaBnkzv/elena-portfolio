@@ -1,4 +1,8 @@
 /* Add application styles & imports to this file! */
+body {
+  font-family: Roboto,"Helvetica Neue",sans-serif;
+}
+
 ul {
   list-style: none;
 }
@@ -6,10 +10,6 @@ ul {
 label {
   display: block;
   margin-bottom: 10px;
-}
-
-button {
-  margin-top: 15px;
 }
 
 .full-width {

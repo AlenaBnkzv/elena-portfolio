@@ -25,7 +25,8 @@ import {
   MatButtonModule,
   MatInputModule,
   MatExpansionModule,
-  MatGridListModule
+  MatGridListModule,
+  MatDividerModule
   }
   from '@angular/material';
 
@@ -42,7 +43,8 @@ import {
     MatButtonModule,
     MatInputModule,
     MatExpansionModule,
-    MatGridListModule
+    MatGridListModule,
+    MatDividerModule
   ],
   declarations: [ AppComponent, HomeComponent, ProfileComponent, BioComponent, ProjectComponent, LoginPageComponent ],
   bootstrap:    [ AppComponent ],

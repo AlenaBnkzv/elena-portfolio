@@ -64,17 +64,20 @@
           Please provide url
         </mat-error>
       </mat-form-field>
-      <mat-form-field class="full-width" >
-        <label>Project Year</label>
-      <input
-        matInput
-        class="form-control"
-        type="text"
-        formControlName="year"
-        [ngClass]="{'is-invalid': projectForm.get('year').invalid && projectForm.get('year').touched}"
-      />
+      <mat-form-field class="example-full-width">
+        <label>Choose a starting date for a project</label>
+        <input 
+          matInput
+          [min]="minDate"
+          [max]="maxDate"
+          [matDatepicker]="picker"
+          formControlName="year"
+          [ngClass]="{'is-invalid': projectForm.get('year').invalid && projectForm.get('year').touched}"
+        />
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
         <mat-error>
-          Please provide year.
+          Please provide date
         </mat-error>
       </mat-form-field>
       <button

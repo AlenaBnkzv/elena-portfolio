@@ -20,13 +20,16 @@ import { ProjectService } from './project/project.service';
 import { BioService } from './bio/bio.service';
 import { AuthService } from './shared/services/auth.service';
 import { AuthGuard } from './shared/guard/auth.guard';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { 
   MatButtonModule,
   MatInputModule,
   MatExpansionModule,
   MatGridListModule,
-  MatDividerModule
+  MatDividerModule,
+  MatDatepickerModule,
+  MatNativeDateModule
   }
   from '@angular/material';
 
@@ -44,7 +47,10 @@ import {
     MatInputModule,
     MatExpansionModule,
     MatGridListModule,
-    MatDividerModule
+    MatDividerModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    FlexLayoutModule
   ],
   declarations: [ AppComponent, HomeComponent, ProfileComponent, BioComponent, ProjectComponent, LoginPageComponent ],
   bootstrap:    [ AppComponent ],

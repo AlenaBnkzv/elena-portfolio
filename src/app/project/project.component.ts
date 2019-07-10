@@ -26,12 +26,7 @@ export class ProjectComponent implements OnInit, OnDestroy {
    this.projectForm = new FormGroup({
     name: new FormControl('', Validators.required),
     url: new FormControl('', Validators.required),
-    year: new FormControl('',[
-      Validators.required,
-      Validators.minLength(4),
-      Validators.maxLength(4),
-      Validators.pattern('^[0-9]*$')
-    ])
+    year: new FormControl('',Validators.required)
   });
 
   this.experienceSub = this.experience.getProjects().subscribe((data)=> {

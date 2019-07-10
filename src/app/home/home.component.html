@@ -1,9 +1,9 @@
 
 <app-profile></app-profile>
-<div>
-  <p *ngIf="user">Logged in as admin</p>
-  <p *ngIf="!user">Logged in as user</p>
+<div class="user__status" fxLayout="row" fxLayoutGap="10px">
   <button mat-flat-button color="primary" class="btn btn-primary" *ngIf="user" (click)="logout()">Logout</button>
   <button mat-flat-button color="primary" class="btn btn-primary" *ngIf="!user" (click)="login()">Login</button>
+  <p *ngIf="user">Logged in as admin</p>
+  <p *ngIf="!user">Logged in as user</p>
 </div>
 <app-project [user]="user"></app-project>

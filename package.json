@@ -22,7 +22,7 @@
     "@firebase/util": "0.2.20",
     "angular": "1.7.8",
     "angularfire2": "5.2.1",
-    "core-js": "2.6.9",
+    "core-js": "2",
     "fire": "0.55.1",
     "firebase": "6.2.4",
     "flex-layout": "1.0.1",

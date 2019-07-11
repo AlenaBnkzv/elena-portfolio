@@ -1,4 +1,4 @@
-<div fxLayoutAlign="center center">
+<div>
   <form  [formGroup]="loginForm" (ngSubmit)="login(loginForm)">
     <div class="row" *ngIf="authError">
         <mat-error>{{ authError?.message }}</mat-error>

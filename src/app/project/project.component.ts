@@ -1,5 +1,6 @@
 import { Component, OnInit, OnDestroy, Input } from '@angular/core';
 import { ProjectService }  from './project.service';
+import { MomentDateAdapter } from '@angular/material-moment-adapter';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Subscription }  from 'rxjs';
 
@@ -8,6 +9,7 @@ import { Subscription }  from 'rxjs';
   templateUrl: './project.component.html',
   styleUrls: ['./project.component.scss']
 })
+
 export class ProjectComponent implements OnInit, OnDestroy {
   @Input() user;
   projectList: any[];

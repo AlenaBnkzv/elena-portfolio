@@ -30,3 +30,11 @@
 .user__project__title-add {
   margin-bottom: 0;
 }
+
+.month-picker .mat-calendar-period-button {
+  pointer-events: none;
+}
+
+.month-picker .mat-calendar-arrow {
+  display: none;
+}

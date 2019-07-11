@@ -29,7 +29,8 @@ import {
   MatGridListModule,
   MatDividerModule,
   MatDatepickerModule,
-  MatNativeDateModule
+  MatNativeDateModule,
+  MatListModule
   }
   from '@angular/material';
 
@@ -50,6 +51,7 @@ import {
     MatDividerModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    MatListModule,
     FlexLayoutModule
   ],
   declarations: [ AppComponent, HomeComponent, ProfileComponent, BioComponent, ProjectComponent, LoginPageComponent ],

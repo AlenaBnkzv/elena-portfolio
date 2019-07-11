@@ -24,8 +24,14 @@ export class ProjectComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
    this.projectForm = new FormGroup({
-    name: new FormControl('', Validators.required),
-    url: new FormControl('', Validators.required),
+    name: new FormControl('',[
+      Validators.required,
+      Validators.minLength(2)
+    ]),
+    url: new FormControl('',[
+      Validators.required,
+      Validators.minLength(2)
+    ]),
     year: new FormControl('',Validators.required)
   });
 

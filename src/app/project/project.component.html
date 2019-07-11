@@ -7,11 +7,11 @@
         </mat-panel-title>
       </mat-expansion-panel-header>
       <mat-panel-description>
-        <ul class="user__project">
-          <li *ngFor="let project of projectList">
+        <mat-list class="user__project">
+          <mat-list-item *ngFor="let project of projectList">
             {{ project.name }} - {{ project.year }}
-          </li>
-        </ul>
+          </mat-list-item>
+        </mat-list>
       </mat-panel-description>
     </mat-expansion-panel>
   </mat-accordion>
@@ -23,11 +23,11 @@
         </mat-panel-title>
       </mat-expansion-panel-header>
       <mat-panel-description>
-        <ul class="user__project">
-        <li *ngFor="let project of projectList">
-          <a [href]="project.url">{{ project.url }}</a>
-        </li>
-      </ul>
+        <mat-list class="user__project">
+          <mat-list-item *ngFor="let project of projectList">
+            <a [href]="project.url">{{ project.url }}</a>
+          </mat-list-item>
+      </mat-list>
       </mat-panel-description>
     </mat-expansion-panel>
   </mat-accordion>
@@ -64,18 +64,22 @@
           Please provide url
         </mat-error>
       </mat-form-field>
-      <mat-form-field class="example-full-width">
+      <mat-form-field class="full-width">
         <label>Choose a starting date for a project</label>
         <input 
           matInput
-          [min]="minDate"
-          [max]="maxDate"
-          [matDatepicker]="picker"
+          [matDatepicker]="dp"
           formControlName="year"
           [ngClass]="{'is-invalid': projectForm.get('year').invalid && projectForm.get('year').touched}"
         />
-        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker #picker></mat-datepicker>
+        <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
+        <mat-datepicker
+          #dp
+          startView="multi-year"
+          (yearSelected)="chosenYearHandler($event)"
+          (monthSelected)="chosenMonthHandler($event, dp)"
+          panelClass="month-picker">
+        </mat-datepicker>
         <mat-error>
           Please provide date
         </mat-error>

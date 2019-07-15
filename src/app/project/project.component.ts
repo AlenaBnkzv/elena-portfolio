@@ -1,7 +1,13 @@
 import { Component, OnInit, OnDestroy, Input } from '@angular/core';
 import { ProjectService }  from './project.service';
 import { MomentDateAdapter } from '@angular/material-moment-adapter';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { 
+ FormGroup,
+ FormControl,
+ Validators,
+ NgForm 
+}
+from '@angular/forms';
 import { Subscription }  from 'rxjs';
 
 @Component({
@@ -15,6 +21,7 @@ export class ProjectComponent implements OnInit, OnDestroy {
   projectList: any[];
   experienceSub: Subscription;
   projectForm: FormGroup;
+  value="";
 
   emailFormControl = new FormControl('', [
     Validators.required,

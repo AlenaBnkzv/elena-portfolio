@@ -34,6 +34,7 @@
   <div *ngIf="user" class="form-wrapper">
     <h4 class="user__project__title-add">Add project</h4>
     <form
+      #form="ngForm" 
       [formGroup]="projectForm"
       class="user__project__form"
       (ngSubmit)="onSubmit()"
@@ -45,7 +46,10 @@
           class="form-control"
           type="text"
           formControlName="name"
+          [ngModel]="value | titlecase"
+          (ngModelChange)="value=$event"
           [ngClass]="{'is-invalid': projectForm.get('name').invalid && projectForm.get('name').touched}"
+          name='Name'
         />
         <mat-error>
           Please provide name

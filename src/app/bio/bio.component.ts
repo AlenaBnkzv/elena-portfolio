@@ -4,8 +4,8 @@ import { NgForm } from '@angular/forms';
 import { Subscription }  from 'rxjs';
 
 export interface EducationList {
-  name: string;
-  year: number;
+  name?: string;
+  year?: number;
 }
 
 @Component({

@@ -46,10 +46,9 @@
           class="form-control"
           type="text"
           formControlName="name"
-          [ngModel]="value | titlecase"
-          (ngModelChange)="value=$event"
+          [ngModel]="valueInput_name | titlecase"
+          (ngModelChange)="valueInput_name=$event"
           [ngClass]="{'is-invalid': projectForm.get('name').invalid && projectForm.get('name').touched}"
-          name='Name'
         />
         <mat-error>
           Please provide name
@@ -62,6 +61,8 @@
           class="form-control"
           type="text"
           formControlName="url"
+          [ngModel]="valueInput_url"
+          (ngModelChange)="valueInput_url=$event"
           [ngClass]="{'is-invalid': projectForm.get('url').invalid && projectForm.get('url').touched}"
         />
         <mat-error>
@@ -74,6 +75,8 @@
           matInput
           [matDatepicker]="dp"
           formControlName="year"
+          [ngModel]="valueInput_year"
+          (ngModelChange)="valueInput_year=$event"
           [ngClass]="{'is-invalid': projectForm.get('year').invalid && projectForm.get('year').touched}"
         />
         <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>

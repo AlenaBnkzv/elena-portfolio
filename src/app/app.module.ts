@@ -30,7 +30,8 @@ import {
   MatDividerModule,
   MatDatepickerModule,
   MatNativeDateModule,
-  MatListModule
+  MatListModule,
+  MatToolbarModule
   }
   from '@angular/material';
 
@@ -53,6 +54,7 @@ import {
     MatDatepickerModule,
     MatNativeDateModule,
     MatListModule,
+    MatToolbarModule,
     FlexLayoutModule
   ],
   declarations: [ AppComponent, HomeComponent, ProfileComponent, BioComponent, ProjectComponent, LoginPageComponent ],

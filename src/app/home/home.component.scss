@@ -1,3 +1,17 @@
 .user__status {
    padding-top: 10px;
 }
+
+.mat-toolbar-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.mat-list-base {
+  margin-bottom: 20px;
+}
+
+.user__status {
+  display: flex;
+  flex-direction: column;
+}
